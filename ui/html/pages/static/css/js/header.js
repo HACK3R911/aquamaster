@@ -5,7 +5,7 @@ template.innerHTML = `
     <title>Aquamaster</title>
     <link rel="stylesheet" href="static/css/main_style.css">
     <script defer src="plumbing.js"></script>
-    <link rel="website icon" type="png" href="aquamaster/ui/html/pages/static/css/img/images/icons/menu_icon.png">
+    <link rel="website icon" type="png" href="../img/images/icons/search.png">
 `;
 
 // Добавляем содержимое в head
