@@ -24,23 +24,28 @@
 
         <h1>Профиль пользователя</h1>
         <div class="info-block">
+            <h2>Имя пользователя</h2>
+            <p>{{.Nickname}}</p>
+        </div>
+
+        <div class="info-block">
             <h2>ФИО пользователя</h2>
-            <p>Иванов Иван Иванович</p>
+            <p>{{.Lastname}} {{.Midllename}} {{.Firstname}}</p>
         </div>
 
         <div class="info-block">
             <h2>Контактный телефон</h2>
-            <p>+7 (999) 123-45-67</p>
+            <p>{{.Phone}}</p>
         </div>
 
         <div class="info-block">
             <h2>Адрес доставки</h2>
-            <p>Москва, ул. Пушкина, д. 10, кв. 1</p>
+            <p>{{.Address}}</p>
         </div>
 
         <div class="info-block">
             <h2>Способ оплаты</h2>
-            <p>Кредитная карта **** **** **** 1234</p>
+            <p>{{.Payment}}</p>
         </div>
 
         <div class="info-block">
@@ -64,5 +69,4 @@
         </div>
     </div>
 </body>
-
 </html>

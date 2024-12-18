@@ -1,22 +1,22 @@
 package main
 
 import (
+	"aquamaster/routes"
 	"log"
 	"net/http"
 )
 
 func main() {
-	// Указываем путь к статическим файлам (CSS, JS и т.д.)
-	fs := http.FileServer(http.Dir("./ui/static"))
+	//static files
+	fs := http.FileServer(http.Dir("./ui/html/pages/static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	// Настройка маршрутов
-	setupRoutes()
+	r := routes.SetupRoutes()
 
 	// Запуск сервера на порту 8080
 	log.Println("Сервер запущен на :8080")
-	err := http.ListenAndServe(":8080", nil)
-	if err != nil {
+	if err := http.ListenAndServe(":8080", r); err != nil {
 		log.Fatal(err)
 	}
 }

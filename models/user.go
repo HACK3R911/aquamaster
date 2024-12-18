@@ -1,9 +1,10 @@
 package models
 
-type User struct {
-	ID       uint   `db:"id"`
-	Email    string `db:"email"`
-	Password string `db:"password"`
-	Phone    string `db:"phone"`
-	Address  string `db:"address"`
+type UserProfile struct {
+	Lastname   string `json:"lastname"`
+	Firstname  string `json:"firstname"`
+	Midllename string `json:"midllename"`
+	Phone      string `json:"phone"`
+	Address    string `json:"address"`
+	Payment    string `json:"payment"`
 }
