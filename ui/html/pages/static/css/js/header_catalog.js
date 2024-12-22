@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbarHTML = `
     <div class="navbar">
         <div class="navbar-item">
-            <input class="search" placeholder="Поиск...">
+            <input class="search">
         </div>
         <div class="navbar-item">
             <a href="../../favorites.html">Избранное</a>
