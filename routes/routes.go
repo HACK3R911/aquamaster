@@ -1,22 +1,26 @@
 package routes
 
 import (
-	"aquamaster/handlers"
-	"github.com/gorilla/mux"
+	"aquamaster/controllers"
+
+	"github.com/gin-gonic/gin"
 )
 
-func SetupRoutes() *mux.Router {
-	r := mux.NewRouter()
+func UserRoutes(incomingRoutes *gin.Engine) {
+	incomingRoutes.GET("/", controllers.GetHomeForm())
 
-	r.HandleFunc("/", handlers.HomeHandler).Methods("GET")
+	incomingRoutes.GET("/profile", controllers.GetProfileForm())
+	incomingRoutes.GET("/cart", controllers.GetCartForm())
+	incomingRoutes.GET("/favorites", controllers.GetFavoritesForm())
+	incomingRoutes.GET("/plumbing", controllers.GetPlumbingForm())
+	incomingRoutes.GET("/interior", controllers.GetInteriorForm())
+	incomingRoutes.GET("/accessories", controllers.GetAccessoriesForm())
 
-	r.HandleFunc("/profile", handlers.ProfileHandler).Methods("GET")
-	r.HandleFunc("/cart", handlers.CartHandler).Methods("GET")
-	r.HandleFunc("/favorites", handlers.FavoritesHandler).Methods("GET")
+	incomingRoutes.GET("/signup", controllers.GetSignUpForm())
 
-	r.HandleFunc("/plumbing", handlers.PlumbingHandler).Methods("GET")
-	r.HandleFunc("/interior", handlers.InteriorHandler).Methods("GET")
-	r.HandleFunc("/accessories", handlers.AccessoriesHandler).Methods("GET")
-
-	return r
+	incomingRoutes.POST("/users/signup", controllers.SignUp())
+	incomingRoutes.POST("/users/login", controllers.Login())
+	incomingRoutes.POST("/admin/addproduct", controllers.ProductViewerAdmin())
+	incomingRoutes.GET("/users/productview", controllers.SearchProduct())
+	incomingRoutes.GET("/users/search", controllers.SearchProductByQuery())
 }
