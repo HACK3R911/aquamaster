@@ -2,7 +2,7 @@
     border: 1px solid black;
     width: 400px;
     height: 500px;
-    background: url("Authorize.jpg");
+    background: url("img/Authorize.jpg");
     color: white;
     border-radius: 20px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.75);
@@ -60,4 +60,21 @@ button{
     margin: 10px 10px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
     color: white;
+    cursor: pointer;
+}
+
+a{
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+    color: white; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+a:hover{
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.7);
+    color: yellow;
+    cursor: pointer;
+    text-decoration: none;
 }
