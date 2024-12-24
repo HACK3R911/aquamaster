@@ -23,15 +23,17 @@ var UserCollection *mongo.Collection = database.UserData(database.Client, "Users
 var ProductCollection *mongo.Collection = database.ProductData(database.Client, "Products")
 var Validate = validator.New()
 
-// main pages
+// pages
 func GetHomeForm() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		c.HTML(http.StatusOK, "MainMenu.html", nil)
+		c.HTML(http.StatusOK, "home.html", nil)
 	}
 }
+
+// body pages
 func GetProfileForm() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		c.HTML(http.StatusOK, "Profile.html", nil)
+		c.HTML(http.StatusOK, "profile.html", nil)
 	}
 }
 func GetCartForm() gin.HandlerFunc {
@@ -60,10 +62,37 @@ func GetAccessoriesForm() gin.HandlerFunc {
 	}
 }
 
+// footer pages
+func GetAboutForm() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		c.HTML(http.StatusOK, "about.html", nil)
+	}
+}
+func GetForLegalEntitiesForm() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		c.HTML(http.StatusOK, "for_legal_entities.html", nil)
+	}
+}
+func GetForUsersForm() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		c.HTML(http.StatusOK, "for_users.html", nil)
+	}
+}
+func GetQuestionsForm() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		c.HTML(http.StatusOK, "questions.html", nil)
+	}
+}
+
 // Доп
+func GetLoginForm() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		c.HTML(http.StatusOK, "login.html", nil)
+	}
+}
 func GetSignUpForm() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		c.HTML(http.StatusOK, "Registration.html", nil)
+		c.HTML(http.StatusOK, "signup.html", nil)
 	}
 }
 
